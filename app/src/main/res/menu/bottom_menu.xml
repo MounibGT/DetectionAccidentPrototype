@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/home"
+        />
+    <item
+        android:id="@+id/carte"
+        android:title="Carte"
+        android:icon="@drawable/baseline_credit_card_24"/>
+
+    <item
+        android:id="@+id/GPS"
+        android:title="gps"
+        android:icon="@drawable/baseline_add_location_24"/>
+    <item
+        android:id="@+id/profile"
+        android:title="Profile"
+        android:icon="@drawable/baseline_account_circle_24"/>
+
+</menu>
+
