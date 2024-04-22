@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:gravity="center"
-    android:background="@drawable/login_bakgrand"
     android:padding="16dp">
 
     <LinearLayout
@@ -15,20 +14,22 @@
         android:gravity="center"
         android:orientation="vertical">
 
+
         <ImageView
             android:layout_width="160dp"
             android:layout_height="160dp"
-            android:src="@drawable/baseline_account_circle_24"/>
+            android:src="@drawable/baseline_account_circle_24" />
 
         <Button
             android:id="@+id/pdf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PDF"
+            android:text="CV"
             android:textSize="18sp"
             android:textColor="@color/white"
             android:padding="18dp"
             android:background="@drawable/corner"
+            android:backgroundTint="#14213d"
             android:layout_marginTop="32dp"/>
 
         <EditText
@@ -36,8 +37,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:textStyle="bold"
             android:background="@drawable/corner"
             android:padding="18dp"
@@ -55,7 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="From Date: "
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="20sp"/>
 
@@ -64,8 +65,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColorHint="@color/white"
-                android:textColor="@color/white"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:background="@drawable/corner"
                 android:padding="18dp"
@@ -83,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="to Date:       "
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="20sp"/>
 
@@ -92,8 +93,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:textStyle="bold"
             android:background="@drawable/corner"
             android:padding="18dp"
@@ -111,6 +112,7 @@
             android:id="@+id/send_btn"
             android:textColor="@color/white"
             android:padding="18dp"
+            android:backgroundTint="#fca311"
             android:background="@drawable/corner"/>
 
         <Button
@@ -118,6 +120,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Back"
+            android:textColor="@color/white"
+            android:backgroundTint="#14213d"
             android:background="@drawable/corner"
             android:id="@+id/back_btn"/>
 

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/home"
@@ -15,7 +14,7 @@
     <item
         android:id="@+id/GPS"
         android:title="gps"
-        android:icon="@drawable/baseline_add_location_24"/>
+        android:icon="@drawable/baseline_location_on_24"/>
     <item
         android:id="@+id/profile"
         android:title="Profile"
