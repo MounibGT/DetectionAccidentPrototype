@@ -26,13 +26,13 @@
                 android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
                 <!-- LinearLayout interne avec orientation horizontale pour placer l'image et le bouton côte à côte -->
-
-
                 <ImageView
-                    android:layout_width="214dp"
-                    android:layout_height="132dp"
+                    android:layout_width="136dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/baseline_account_circle_24" />
+                    android:layout_height="136dp"
+                    android:src="@drawable/logo5"/>
+
+
 
             </LinearLayout>
 
@@ -49,6 +49,7 @@
                 android:padding="8dp">
 
                 <TextView
+                    android:layout_marginLeft="28dp"
                     android:id="@+id/nom_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -59,11 +60,15 @@
 
                 <TextView
                     android:id="@+id/nom_input"
-                    android:layout_width="match_parent"
+                    android:layout_marginLeft="48dp"
+                    android:text="Asloune"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:layout_width="210dp"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <!-- Prénom -->
@@ -79,6 +84,7 @@
                 android:padding="8dp">
 
                 <TextView
+                    android:layout_marginLeft="28dp"
                     android:id="@+id/prenom_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -88,12 +94,16 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:layout_marginLeft="20dp"
                     android:id="@+id/prenom_input"
-                    android:layout_width="match_parent"
+                    android:layout_width="210dp"
                     android:layout_height="wrap_content"
                     android:padding="7dp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:text="Yahiya"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <!-- Numéro de téléphone -->
@@ -109,6 +119,7 @@
                 android:padding="8dp">
 
                 <TextView
+                    android:layout_marginLeft="28dp"
                     android:id="@+id/numerotel_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -118,12 +129,16 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:layout_marginLeft="35dp"
                     android:id="@+id/numerotel_input"
-                    android:layout_width="match_parent"
+                    android:layout_width="210dp"
                     android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:text="07.74.96.96.02"
                     android:padding="7dp"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <!-- Modèle de conduite -->
@@ -142,6 +157,7 @@
                 android:padding="8dp">
 
                 <TextView
+                    android:layout_marginLeft="28dp"
                     android:id="@+id/m_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -151,12 +167,16 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:layout_marginLeft="25dp"
                     android:id="@+id/m_input"
-                    android:layout_width="match_parent"
+                    android:layout_width="210dp"
                     android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:text="C1"
                     android:padding="8dp"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <!-- Numéro de camion -->
@@ -172,21 +192,27 @@
                 android:padding="8dp">
 
                 <TextView
+                    android:layout_marginLeft="30dp"
                     android:id="@+id/mc_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="N°camion:"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:gravity="left"/>
 
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:id="@+id/mc_input"
-                    android:layout_width="match_parent"
+                    android:layout_width="210dp"
                     android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="006"
+                    android:textAlignment="center"
                     android:padding="8dp"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <!-- Adresse domicile -->
@@ -202,21 +228,26 @@
                 android:padding="8dp">
 
                 <TextView
+                    android:layout_marginLeft="30dp"
                     android:id="@+id/add_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Adresse domicile:"
+                    android:text="Adresse :"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:layout_marginLeft="13dp"
                     android:id="@+id/add_input"
-                    android:layout_width="match_parent"
+                    android:layout_width="210dp"
                     android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:text="Elkroube_Constantine"
                     android:padding="8dp"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <!-- Email -->
@@ -227,11 +258,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="6dp"
                 android:background="@drawable/corner"
-                android:gravity="center"
+
                 android:orientation="horizontal"
                 android:padding="8dp">
 
                 <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_gravity="left"
                     android:id="@+id/email_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -242,11 +275,16 @@
 
                 <TextView
                     android:id="@+id/email_input"
-                    android:layout_width="match_parent"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:gravity="center"
                     android:padding="8dp"
+                    android:text="AslouneYahiya@gmail.com"
+                    android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <!-- Autre -->
@@ -262,21 +300,27 @@
                 android:padding="8dp">
 
                 <TextView
+                    android:layout_marginLeft="28dp"
                     android:id="@+id/autre_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Matricule camion:"
+                    android:text="Matricule :"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
+
                     android:id="@+id/autre_input"
-                    android:layout_width="match_parent"
+                    android:layout_width="210dp"
                     android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:text="06801 1118 25"
                     android:padding="8dp"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="15sp"
+                    />
             </LinearLayout>
 
         </LinearLayout>
