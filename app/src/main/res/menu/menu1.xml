@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
 
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_settinge"
+            android:icon="@drawable/baseline_settings_24"
+            android:title="Settings">
+            <menu>
+                <item
+                    android:id="@+id/nav_sub_item_1"
+                    android:icon="@drawable/baseline_language_24"
+                    android:title="Change the language" />
+            </menu>
+        </item>
+
+        <item
+            android:id="@+id/nav_users"
+            android:icon="@drawable/baseline_format_list_bulleted_24"
+            android:title="the users" />
+    </group>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/baseline_exit_to_app_24"
+                android:title="Logout" />
+        </menu>
+    </item>
 </menu>

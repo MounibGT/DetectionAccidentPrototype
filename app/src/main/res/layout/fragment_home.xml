@@ -29,7 +29,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Numero de camion:"
+                android:text="N°Trucks:"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -57,7 +57,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ville deparet"
+            android:text="Departure city "
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -85,7 +85,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ville arrevee"
+                android:text="Arrival city "
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />

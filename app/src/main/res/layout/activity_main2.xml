@@ -14,13 +14,15 @@
         android:gravity="center"
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
-    <Button
-        android:id="@+id/back_btn"
-        android:layout_width="66dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:background="@drawable/back"
-        android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/back_btn"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:background="@drawable/back"
+            android:textColor="@color/white"
+            tools:ignore="SpeakableTextPresentCheck" />
 </LinearLayout>
 
     <LinearLayout
@@ -81,13 +83,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColorHint="@color/black"
-                android:textColor="@color/black"
-                android:textStyle="bold"
                 android:background="@drawable/corner"
+                android:inputType="date"
                 android:padding="18dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:textSize="20sp"
-                android:inputType="date"/>
+                android:textStyle="bold"
+                tools:ignore="SpeakableTextPresentCheck" />
         </LinearLayout>
 
     <LinearLayout
@@ -99,7 +102,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="to Date:       "
+            android:text="   To Date:   "
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="20sp"/>
@@ -109,14 +113,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:textStyle="bold"
             android:background="@drawable/corner"
-            android:padding="18dp"
-            android:textSize="20sp"
             android:inputType="date"
-            />
+            android:padding="18dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="SpeakableTextPresentCheck" />
     </LinearLayout>
 
         <Button

@@ -20,7 +20,9 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -30,15 +32,19 @@ import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.single.PermissionListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SettingsFragment extends Fragment implements OnMapReadyCallback {
 
     private SupportMapFragment supportMapFragment;
     private GoogleMap gMap;
     private LocationManager locationManager;
+    private Marker nearestPoliceStationMarker;
+    private List<LatLng> policeStationsLocations = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
         supportMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.id_map);
         if (supportMapFragment != null) {
@@ -50,8 +56,10 @@ public class SettingsFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         locationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
+
+        // Ajouter les emplacements des postes de police à la liste
+        addPoliceStationsLocations();
     }
 
     @Override
@@ -106,10 +114,71 @@ public class SettingsFragment extends Fragment implements OnMapReadyCallback {
                     MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("Current Location");
                     gMap.addMarker(markerOptions);
                     gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
+
+                    // Trouver le poste de police le plus proche
+                    LatLng nearestPoliceStation = findNearestPoliceStation(location);
+                    if (nearestPoliceStation != null) {
+                        // Ajouter le marqueur du poste de police le plus proche
+                        addNearestPoliceStationMarker(nearestPoliceStation);
+                    }
                 } else {
                     Toast.makeText(requireContext(), "Unable to fetch current location", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+    }
+
+    private LatLng findNearestPoliceStation(Location currentLocation) {
+        LatLng nearestStation = null;
+        float smallestDistance = Float.MAX_VALUE;
+
+        for (LatLng stationLocation : policeStationsLocations) {
+            Location stationLocationObj = new Location("Station Location");
+            stationLocationObj.setLatitude(stationLocation.latitude);
+            stationLocationObj.setLongitude(stationLocation.longitude);
+
+            float distance = currentLocation.distanceTo(stationLocationObj);
+            if (distance < smallestDistance) {
+                smallestDistance = distance;
+                nearestStation = stationLocation;
+            }
+        }
+
+        return nearestStation;
+    }
+
+    private void addNearestPoliceStationMarker(LatLng nearestStation) {
+        float couleurBleue = BitmapDescriptorFactory.HUE_BLUE;
+
+        for (LatLng stationLocation : policeStationsLocations) {
+            // Ajouter un marqueur pour chaque poste de police sur la carte avec la couleur bleue
+            gMap.addMarker(new MarkerOptions()
+                    .position(stationLocation)
+                    .title("Poste de Police")
+                    .icon(BitmapDescriptorFactory.defaultMarker(couleurBleue)));
+        }
+        if (nearestPoliceStationMarker != null) {
+            nearestPoliceStationMarker.remove();
+        }
+
+        float couleurVerte = BitmapDescriptorFactory.HUE_GREEN;
+        nearestPoliceStationMarker = gMap.addMarker(new MarkerOptions().position(nearestStation).title("Nearest Police Station").icon(BitmapDescriptorFactory.defaultMarker(couleurVerte)));
+    }
+
+    private void addPoliceStationsLocations() {
+        policeStationsLocations.add(new LatLng(36.923680, 7.757167));
+        policeStationsLocations.add(new LatLng(36.917736, 7.766498));
+        policeStationsLocations.add(new LatLng(36.907239, 7.737151));
+        policeStationsLocations.add(new LatLng(36.908401, 7.753767));
+        policeStationsLocations.add(new LatLng(36.906021, 7.757077));
+        policeStationsLocations.add(new LatLng(36.901480, 7.744071));
+        policeStationsLocations.add(new LatLng(36.899916, 7.753016));
+        policeStationsLocations.add(new LatLng(36.894766, 7.751596));
+        policeStationsLocations.add(new LatLng(36.898523, 7.752124));
+        policeStationsLocations.add(new LatLng(36.891593, 7.726918));
+        policeStationsLocations.add(new LatLng(36.882559, 7.726929));
+        policeStationsLocations.add(new LatLng(36.873683, 7.716801));
+   
+        policeStationsLocations.add(new LatLng(36.807507, 7.736830));
     }
 }

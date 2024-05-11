@@ -20,7 +20,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="151dp"
-                android:gravity="bottom"
+
                 android:orientation="vertical"
                 android:padding="16dp"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark">
@@ -28,9 +28,9 @@
                 <!-- LinearLayout interne avec orientation horizontale pour placer l'image et le bouton côte à côte -->
                 <ImageView
                     android:layout_width="136dp"
-                    android:layout_gravity="center"
                     android:layout_height="136dp"
-                    android:src="@drawable/logo5"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/user1" />
 
 
 
@@ -49,26 +49,26 @@
                 android:padding="8dp">
 
                 <TextView
-                    android:layout_marginLeft="28dp"
+
                     android:id="@+id/nom_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nom:"
+                    android:text="Familly name:"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/nom_input"
-                    android:layout_marginLeft="48dp"
-                    android:text="Asloune"
-                    android:textAlignment="center"
-                    android:textStyle="bold"
-                    android:layout_width="210dp"
+
+                    android:layout_width="141dp"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
+                    android:text="Asloune"
+                    android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <!-- Prénom -->
@@ -88,7 +88,7 @@
                     android:id="@+id/prenom_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Prénom:"
+                    android:text="Name:"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -101,7 +101,7 @@
                     android:padding="7dp"
                     android:textStyle="bold"
                     android:textAlignment="center"
-                    android:text="Yahiya"
+                    android:text="Yahya"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -123,22 +123,22 @@
                     android:id="@+id/numerotel_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="N° Tel:"
+                    android:text="N° Phone:"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:layout_marginLeft="35dp"
                     android:id="@+id/numerotel_input"
-                    android:layout_width="210dp"
+                    android:layout_width="157dp"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textAlignment="center"
-                    android:text="07.74.96.96.02"
+                    android:layout_marginLeft="35dp"
                     android:padding="7dp"
+                    android:text="07.74.96.96.02"
+                    android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <!-- Modèle de conduite -->
@@ -161,22 +161,22 @@
                     android:id="@+id/m_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Paremi:"
+                    android:text="Permit:"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:layout_marginLeft="25dp"
                     android:id="@+id/m_input"
-                    android:layout_width="210dp"
+                    android:layout_width="173dp"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textAlignment="center"
-                    android:text="C1"
+                    android:layout_marginLeft="25dp"
                     android:padding="8dp"
+                    android:text="C1"
+                    android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <!-- Numéro de camion -->
@@ -196,23 +196,23 @@
                     android:id="@+id/mc_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="N°camion:"
+                    android:text="N°Trucks:"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:gravity="left"/>
 
                 <TextView
-                    android:layout_marginLeft="5dp"
                     android:id="@+id/mc_input"
-                    android:layout_width="210dp"
+                    android:layout_width="183dp"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:padding="8dp"
                     android:text="006"
                     android:textAlignment="center"
-                    android:padding="8dp"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <!-- Adresse domicile -->
@@ -232,22 +232,22 @@
                     android:id="@+id/add_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Adresse :"
+                    android:text="Address:"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:layout_marginLeft="13dp"
                     android:id="@+id/add_input"
-                    android:layout_width="210dp"
+                    android:layout_width="190dp"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textAlignment="center"
-                    android:text="Elkroube_Constantine"
+                    android:layout_marginLeft="13dp"
                     android:padding="8dp"
+                    android:text="Elkroube_Constantine"
+                    android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <!-- Email -->
@@ -258,13 +258,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="6dp"
                 android:background="@drawable/corner"
-
+                android:gravity="center"
                 android:orientation="horizontal"
                 android:padding="8dp">
 
                 <TextView
-                    android:layout_marginLeft="20dp"
-                    android:layout_gravity="left"
+                    android:layout_marginLeft="30dp"
                     android:id="@+id/email_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -275,17 +274,17 @@
 
                 <TextView
                     android:id="@+id/email_input"
-                    android:layout_width="200dp"
+                    android:layout_width="210dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="0dp"
-                    android:gravity="center"
+                    android:layout_marginLeft="13dp"
                     android:padding="8dp"
-                    android:text="AslouneYahiya@gmail.com"
+                    android:text="aslouneyahya@gmail.com"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
             </LinearLayout>
+
 
             <!-- Autre -->
             <LinearLayout
@@ -304,7 +303,7 @@
                     android:id="@+id/autre_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Matricule :"
+                    android:text="Truck number:"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -312,15 +311,47 @@
                 <TextView
 
                     android:id="@+id/autre_input"
-                    android:layout_width="210dp"
+                    android:layout_width="147dp"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textAlignment="center"
-                    android:text="06801 1118 25"
                     android:padding="8dp"
+                    android:text="06801 1118 25"
+                    android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="15sp"
-                    />
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/corner"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_marginLeft="28dp"
+                    android:id="@+id/blood_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blood Type:"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:id="@+id/blood_input"
+                    android:layout_width="147dp"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="A+"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>

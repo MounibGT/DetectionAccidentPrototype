@@ -7,6 +7,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
         EditText passwordInput = findViewById(R.id.password_input);
         Button loginButton = findViewById(R.id.login_btn);
         Button newUserButton = findViewById(R.id.new_user_btn);
-
+        Button Adminbtn =findViewById(R.id.admin);
+        TextView forgetpss =findViewById(R.id.forgetpass);
         // Définir l'action lorsqu'on clique sur le bouton Login
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,8 +56,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         // Définir l'action lorsqu'on clique sur le bouton New User
         newUserButton.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 // Créer un Intent pour naviguer vers MainActivity2
@@ -63,5 +67,26 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        forgetpss.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // Créer un Intent pour naviguer vers MainActivity2
+                Intent intent = new Intent(MainActivity.this, MainActivity4.class);
+                startActivity(intent);
+            }
+        });
+        Adminbtn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // Créer un Intent pour naviguer vers MainActivity2
+                Intent intent = new Intent(MainActivity.this, MainActivity5.class);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
 }
