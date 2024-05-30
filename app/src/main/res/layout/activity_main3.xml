@@ -3,18 +3,26 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawer_layout"
+    android:background="@drawable/bienvenu1"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
     tools:context=".MainActivity3">
+    <!-- activity_main3.xml -->
+    <FrameLayout
+        android:id="@+id/frame_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-     >
+        >
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -36,9 +44,8 @@
                 android:layout_marginRight="0dp"
                 android:src="@drawable/logo6"
                 />
-
-
         </androidx.appcompat.widget.Toolbar>
+
 
 
         <FrameLayout
@@ -52,7 +59,7 @@
                 android:id="@+id/frame_layout"
                 android:layout_width="match_parent"
                 android:layout_height="649dp"
-             />
+                />
 
         </FrameLayout>
 
@@ -132,6 +139,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:onClick="ok1"
+
                         android:background="@android:color/transparent">
                     </Button>
                 </LinearLayout>

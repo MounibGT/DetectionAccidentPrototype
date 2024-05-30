@@ -1,15 +1,12 @@
 package com.example.app;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.Toast;
-import android.bluetooth.BluetoothAdapter;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,16 +14,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 public class MainActivity6 extends AppCompatActivity {
     private DrawerLayout drawerLayout;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +25,7 @@ public class MainActivity6 extends AppCompatActivity {
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main6);
+
         drawerLayout = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -44,7 +36,6 @@ public class MainActivity6 extends AppCompatActivity {
         navigationView.bringToFront();
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new AdminFragment()).commit();
-
         }
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -53,24 +44,32 @@ public class MainActivity6 extends AppCompatActivity {
                 int itemId = item.getItemId();
                 if (itemId == R.id.nav_logout) {
                     showToast("You clicked on Logout");
-                    logaut();
-                    // Ajoutez votre logique ici pour l'élément Logout
-                }
-                return false;
-            }
+                    logout();
+                    return true;
+                } else if (itemId == R.id.nav_users) {
+                    showToast("You clicked on the users");
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new UsersFragment()).commit();
+                } else if (itemId == R.id.home2) {
+                    showToast("You clicked on home");
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.frame_layout, new AdminFragment());
+                        fragmentTransaction.addToBackStack(null);
+                        fragmentTransaction.commit();
 
+                }
+                drawerLayout.closeDrawers();
+                return true;
+            }
         });
     }
 
-
-    public void logaut() {
+    public void logout() {
         Intent intent = new Intent(MainActivity6.this, MainActivity.class);
         startActivity(intent);
     }
 
-
     private void showToast(String message) {
         Toast.makeText(MainActivity6.this, message, Toast.LENGTH_SHORT).show();
     }
-
 }

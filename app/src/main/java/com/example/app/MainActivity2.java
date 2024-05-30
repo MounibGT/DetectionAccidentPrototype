@@ -29,10 +29,12 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // Hide the title bar and make the activity full screen
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main2);
 
+        // Initialize TextViews for input fields
         fromDateInput = findViewById(R.id.from_date_input);
         toDateInput = findViewById(R.id.to_date_input);
         emailInput = findViewById(R.id.email_input);
@@ -49,6 +51,7 @@ public class MainActivity2 extends AppCompatActivity {
         String toDateText = sdf.format(toDate);
         toDateInput.setText(toDateText);
 
+        // Button to select PDF
         Button pdfInput = findViewById(R.id.pdf);
         pdfInput.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +62,16 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
+        // Button to go back
+        Button backButton = findViewById(R.id.back_btn);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        // Button to send email
         Button sendBtn = findViewById(R.id.send_btn);
         sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,14 +81,6 @@ public class MainActivity2 extends AppCompatActivity {
                 } else {
                     Toast.makeText(MainActivity2.this, "Veuillez sélectionner un fichier PDF, vérifier les dates et saisir une adresse e-mail valide.", Toast.LENGTH_SHORT).show();
                 }
-            }
-        });
-
-        Button backButton = findViewById(R.id.back_btn);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
             }
         });
     }
@@ -132,23 +137,31 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     private void sendEmail() {
-        String email = "ghouatmounib@gmail.com"; // Nouvelle adresse e-mail destinataire
+        String email = "ghouatmounib@gmail.com"; // Adresse e-mail du destinataire
         String subject = "Envoi de fichier PDF";
-
         String fromDate = fromDateInput.getText().toString();
         String toDate = toDateInput.getText().toString();
 
         String message = "Bonjour,\nVeuillez trouver ci-joint le fichier PDF ainsi que les dates from et to.\n\nFrom Date: " + fromDate + "\nTo Date: " + toDate;
 
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.setType("application/pdf");
+        emailIntent.setType("message/rfc822"); // Type MIME pour les e-mails
+
+        // Ajoute l'adresse e-mail du destinataire, le sujet et le corps du message
         emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
         emailIntent.putExtra(Intent.EXTRA_TEXT, message);
-        emailIntent.putExtra(Intent.EXTRA_STREAM, pdfUri);
 
-        startActivity(Intent.createChooser(emailIntent, "Envoyer l'e-mail avec :"));
+        // Vérifie si un fichier PDF est attaché
+        if (pdfUri != null) {
+            emailIntent.putExtra(Intent.EXTRA_STREAM, pdfUri);
+        }
+
+        // Ouvre l'application Gmail directement
+        emailIntent.setPackage("com.google.android.gm");
+
+        // Lance l'intention
+        startActivity(emailIntent);
 
         Toast.makeText(MainActivity2.this, "Email envoyé.", Toast.LENGTH_SHORT).show();
-    }
-}
+    }}

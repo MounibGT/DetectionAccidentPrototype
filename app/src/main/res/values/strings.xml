@@ -8,8 +8,8 @@
     </string-array>
 
 
-        <dimen name="image_width">136dp</dimen>
-        <dimen name="image_height">136dp</dimen>
+    <dimen name="image_width">136dp</dimen>
+    <dimen name="image_height">136dp</dimen>
 
     <string-array name="blood">
         <item>Select a Blood type:</item>

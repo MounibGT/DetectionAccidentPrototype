@@ -19,20 +19,60 @@
             <!-- Header -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="151dp"
-
-                android:orientation="vertical"
+                android:layout_height="187dp"
+                android:orientation="horizontal"
                 android:padding="16dp"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
                 <!-- LinearLayout interne avec orientation horizontale pour placer l'image et le bouton côte à côte -->
-                <ImageButton
-                    android:id="@+id/image_btn"
-                    android:layout_width="136dp"
-                    android:layout_height="136dp"
-                    android:layout_gravity="center"
-                    android:background="@color/lavender"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@android:color/transparent"
+                        android:text="User photo"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+                    <ImageButton
+                        android:id="@+id/image_btn"
+                        android:layout_width="136dp"
+                        android:layout_height="136dp"
+                        android:background="@color/lavender" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="work card"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+                    <ImageButton
+                        android:id="@+id/image_btn1"
+                        android:layout_width="136dp"
+                        android:layout_height="136dp"
+                        android:background="@color/lavender" />
+
+
+    </LinearLayout>
 
 
             </LinearLayout>
@@ -306,18 +346,17 @@
                 android:padding="8dp">
 
                 <TextView
-                    android:layout_marginLeft="28dp"
-                    android:id="@+id/autre_label"
+                    android:id="@+id/user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Truck number:"
+                    android:text="User name:"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/autre_input"
-                    android:layout_width="147dp"
+                    android:id="@+id/username"
+                    android:layout_width="172dp"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
                     android:textAlignment="center"
@@ -326,6 +365,42 @@
                     android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
             </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/corner"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Password:"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/password_input"
+                    android:layout_width="179dp"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+            </LinearLayout>
+
+
 
 
             <Spinner
@@ -350,5 +425,6 @@
                 android:textSize="18sp" />
 
         </LinearLayout>
+
     </ScrollView>
 </FrameLayout>
